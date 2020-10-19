@@ -1,0 +1,33 @@
+import java.util.*;
+class sock
+{
+    
+    static int pair(int arr[], int n)
+    {
+     Arrays.sort(arr);
+     int res = 0;
+     int i = 0;
+      while (i < n-1) 
+      {
+       int number = arr[i];
+       int count = 1;
+       i++;
+        while (i < n-1 && arr[i] == number)
+        {
+          count++;
+          i++;
+        }
+         if (count >= 2)
+         {
+            res = res + count;
+         }
+       }
+        return res / 2;
+    }
+    public static void main(String[] args)
+    {
+        int arr[] = {10,10,10,10,20,30,30,30,30,30,30,30,40,40,40,40,40};
+        int n = arr.length;
+        System.out.println(pair(arr, n));
+    }
+}
